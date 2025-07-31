@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignInFragment">
+    android:gravity="center"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.signin.SignInFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        app:lottie_rawRes="@raw/ecom_2"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:layout_gravity="center"/>
+
     <TextView
+        android:layout_margin="@dimen/_32sdp"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bebas_neue"
+        android:gravity="center"
+        android:textSize="@dimen/_24sdp"
+        android:text="Sign In to OLX"
+        android:textColor="#F85F54"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:hint="Enter your email"
+        app:endIconMode="clear_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:hint="Enter your password"
+        app:endIconMode="password_toggle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:inputType="textWebPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Sign in"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="New User?"
+        android:fontFamily="@font/poppins"
+        android:textStyle="bold"
+        app:strokeColor="#F85F54"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

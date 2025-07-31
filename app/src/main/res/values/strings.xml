@@ -2,4 +2,5 @@
     <string name="app_name">OLX Clone Anroid App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_to_olx_app">Welcome to OLX App</string>
 </resources>
