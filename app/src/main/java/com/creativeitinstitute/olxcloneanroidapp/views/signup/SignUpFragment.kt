@@ -1,6 +1,7 @@
 package com.creativeitinstitute.olxcloneanroidapp.views.signup
 
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 
@@ -14,6 +15,7 @@ import com.creativeitinstitute.olxcloneanroidapp.databinding.FragmentSignUpBindi
 import com.creativeitinstitute.olxcloneanroidapp.extract
 
 import com.creativeitinstitute.olxcloneanroidapp.isEmpty
+import com.creativeitinstitute.olxcloneanroidapp.views.dashboard.UserDashboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -63,6 +65,8 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
                 is DataState.Success<*> -> {
                     loading.dismiss()
                     Toast.makeText(context,"created User : ${it.data}",Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(requireContext(), UserDashboard::class.java))
+                    requireActivity().finish()
                 }
             }
         }

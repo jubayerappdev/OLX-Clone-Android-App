@@ -1,5 +1,6 @@
 package com.creativeitinstitute.olxcloneanroidapp.views.signin
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -10,6 +11,7 @@ import com.creativeitinstitute.olxcloneanroidapp.data.models.UserLogin
 import com.creativeitinstitute.olxcloneanroidapp.databinding.FragmentSignInBinding
 import com.creativeitinstitute.olxcloneanroidapp.extract
 import com.creativeitinstitute.olxcloneanroidapp.isEmpty
+import com.creativeitinstitute.olxcloneanroidapp.views.dashboard.UserDashboard
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -56,6 +58,9 @@ class SignInFragment : BaseFragment<FragmentSignInBinding>(FragmentSignInBinding
                 is DataState.Success<*> -> {
                     loading.dismiss()
                     Toast.makeText(context,"User logged in : ${it.data}",Toast.LENGTH_SHORT).show()
+
+                    startActivity(Intent(requireContext(), UserDashboard::class.java))
+                    requireActivity().finish()
                 }
             }
         }
