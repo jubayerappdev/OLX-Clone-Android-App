@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "584218704150",
+    "project_id": "olx-clone-android-app",
+    "storage_bucket": "olx-clone-android-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:584218704150:android:eadd2a2c21dad6a909f837",
+        "android_client_info": {
+          "package_name": "com.creativeitinstitute.olxcloneanroidapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4VoWX3p8v6mlPUAF5GVtq3qJPJzk-LjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
