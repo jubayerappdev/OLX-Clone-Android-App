@@ -1,14 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.dashboard.profile.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="My Profile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_24ssp"
+            android:textStyle="bold" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_profilePic"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_user"
+        app:shapeAppearanceOverlay="@style/cornerImageView12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="User Name"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/_22ssp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:text="Location"
+            android:textColor="@color/subTextColor"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tv_navEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingHorizontal="12dp"
+            android:layout_marginVertical="@dimen/_8sdp"
+            android:layout_marginHorizontal="@dimen/_24sdp"
+            android:background="@drawable/custom_rectangle_shape_white"
+            android:drawablePadding="@dimen/_12sdp"
+            android:elevation="1dp"
+            android:text="Edit Profile"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/text_title_size_small"
+            android:gravity="center_vertical"
+            app:drawableEndCompat="@drawable/ic_angle_right_24"
+            app:drawableStartCompat="@drawable/ic_user_edit_24"
+            app:drawableTint="@color/primaryColor" />
+        <TextView
+            android:id="@+id/tv_navChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingHorizontal="12dp"
+            android:layout_marginVertical="@dimen/layout_marginVertical_8"
+            android:layout_marginHorizontal="@dimen/layout_marginHorizontal_24"
+            android:background="@drawable/custom_rectangle_shape_white"
+            android:drawablePadding="@dimen/drawablePadding_12dp"
+            android:elevation="1dp"
+            android:text="Change Password"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/text_title_size_small"
+            android:gravity="center_vertical"
+            app:drawableEndCompat="@drawable/ic_angle_right_24"
+            app:drawableStartCompat="@drawable/ic_password_lock_24"
+            app:drawableTint="@color/primaryColor" />
+
+        <TextView
+            android:id="@+id/tv_navPrivacyPolicy"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="@dimen/layout_marginHorizontal_24"
+            android:layout_marginVertical="@dimen/layout_marginVertical_8"
+            android:background="@drawable/custom_rectangle_shape_white"
+            android:drawablePadding="@dimen/drawablePadding_12dp"
+            android:elevation="1dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:text="Privacy Policy"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/text_title_size_small"
+            app:drawableEndCompat="@drawable/ic_angle_right_24"
+            app:drawableStartCompat="@drawable/ic_privacy_settings_24"
+            app:drawableTint="@color/primaryColor" />
+        <TextView
+            android:id="@+id/tv_navTermsConditions"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingHorizontal="12dp"
+            android:layout_marginVertical="@dimen/layout_marginVertical_8"
+            android:layout_marginHorizontal="@dimen/layout_marginHorizontal_24"
+            android:background="@drawable/custom_rectangle_shape_white"
+            android:drawablePadding="@dimen/drawablePadding_12dp"
+            android:elevation="1dp"
+            android:text="@string/terms_conditions"
+            android:textColor="@color/primaryColor"
+            android:textSize="@dimen/text_title_size_small"
+            android:gravity="center_vertical"
+            app:drawableEndCompat="@drawable/ic_angle_right_24"
+            app:drawableStartCompat="@drawable/iv_terms_info_24"
+            app:drawableTint="@color/primaryColor" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginVertical="@dimen/layout_marginVertical_8"
+            android:layout_marginHorizontal="@dimen/layout_marginHorizontal_24"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/secondaryColor"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Logout"
+            android:textColor="@color/white"
+            android:textSize="@dimen/button_textSize"
+            app:cornerRadius="@dimen/button_radius_16"/>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_250sdp"/>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,17 +1,40 @@
 package com.creativeitinstitute.olxcloneanroidapp.views.dashboard
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.creativeitinstitute.olxcloneanroidapp.R
+import com.creativeitinstitute.olxcloneanroidapp.databinding.ActivityUserDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class UserDashboard : AppCompatActivity() {
+
+    private lateinit var binding: ActivityUserDashboardBinding
+    lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.activity_user_dashboard)
+        binding= ActivityUserDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        navController= findNavController(R.id.fragmentContainerView)
+        val apBarConfig = AppBarConfiguration(setOf(
+            R.id.myHomeFragment,
+            R.id.myPostAddFragment,
+            R.id.myChatFragment
+        ))
+        binding.bottomNavigationView.setupWithNavController(navController)
+//        setupActionBarWithNavController(navController, apBarConfig)
 
     }
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+
 }

@@ -5,7 +5,34 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.starter.StartFragment">
+    <LinearLayout
+        android:gravity="center"
+        android:id="@+id/layout_loading"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_200sdp"
+            app:lottie_rawRes="@raw/loading"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:layout_gravity="center"/>
+
+
+
+    </LinearLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_main"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
         android:scaleType="centerCrop"
         android:src="@drawable/backrgound"
@@ -80,5 +107,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnLogin"
         app:strokeColor="#F85F54" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

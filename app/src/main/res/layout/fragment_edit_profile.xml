@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".views.dashboard.profile.EditProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="24dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/ic_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Edit Profile"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_title_size_lage"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/layout_marginTop_28"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Update Profile"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/text_title_size_lage"
+        android:textStyle="bold" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_profilePic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_user"
+            app:shapeAppearanceOverlay="@style/cornerImageView12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_nameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/edit_text_layout_marginHorizontal_medium"
+        android:layout_marginTop="@dimen/edit_text_layout_marginTop"
+        app:boxStrokeColor="@color/secondaryColor"
+        app:endIconMode="clear_text"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/secondaryColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"
+            android:inputType="textWebEditText"
+            android:textColorHint="@color/desTextColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/et_emailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/edit_text_layout_marginHorizontal_medium"
+        android:layout_marginTop="@dimen/edit_text_layout_marginTop"
+        app:boxStrokeColor="@color/secondaryColor"
+        app:endIconMode="clear_text"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:hintTextColor="@color/secondaryColor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Location"
+            android:inputType="textWebEditText"
+            android:textColorHint="@color/desTextColor" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginHorizontal="@dimen/button_marginHorizontal_medium"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/secondaryColor"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Update"
+        android:textColor="@color/white"
+        android:textSize="@dimen/button_textSize"
+        app:cornerRadius="@dimen/button_radius"/>
+</LinearLayout>

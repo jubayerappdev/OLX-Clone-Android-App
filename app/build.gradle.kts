@@ -70,4 +70,15 @@ dependencies {
     // hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    // lifecycle ViewModel
+    implementation(libs.android.viewmodel)
+    implementation(libs.android.livedata)
+    implementation(libs.fragment.ktx)
+
+    implementation(libs.circleimageview)
+    implementation(libs.coil)
+    implementation(libs.glide)
+    implementation(libs.imagepicker)
+    implementation(libs.activity.ktx)
 }

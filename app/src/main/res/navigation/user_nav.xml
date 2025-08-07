@@ -3,26 +3,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/user_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/myHomeFragment">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/myHomeFragment"
         android:name="com.creativeitinstitute.olxcloneanroidapp.views.dashboard.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="My Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_myHomeFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/postAddFragment"
+        android:id="@+id/myPostAddFragment"
         android:name="com.creativeitinstitute.olxcloneanroidapp.views.dashboard.post.PostAddFragment"
-        android:label="fragment_post_add"
+        android:label="My Post Add"
         tools:layout="@layout/fragment_post_add" />
     <fragment
-        android:id="@+id/chatFragment"
+        android:id="@+id/myChatFragment"
         android:name="com.creativeitinstitute.olxcloneanroidapp.views.dashboard.chat.ChatFragment"
-        android:label="fragment_chat"
+        android:label="My Chat"
         tools:layout="@layout/fragment_chat" />
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/myProfileFragment"
         android:name="com.creativeitinstitute.olxcloneanroidapp.views.dashboard.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        android:label="My Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_myProfileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.creativeitinstitute.olxcloneanroidapp.views.dashboard.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_myProfileFragment"
+            app:destination="@id/myProfileFragment" />
+    </fragment>
 </navigation>
