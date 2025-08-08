@@ -3,6 +3,13 @@
     <style name="Base.Theme.OLXCloneAnroidApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/my_status_bar_color</item>
+
+        <!-- Use dark icons (true) or light icons (false) -->
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Old behavior: content below status bar -->
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="Theme.OLXCloneAnroidApp" parent="Base.Theme.OLXCloneAnroidApp" />

@@ -1,44 +1,26 @@
 package com.creativeitinstitute.olxcloneanroidapp.views.dashboard.home
 
-import android.os.Bundle
-import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
-import com.bumptech.glide.Glide
 import com.creativeitinstitute.olxcloneanroidapp.R
 import com.creativeitinstitute.olxcloneanroidapp.base.BaseFragment
-import com.creativeitinstitute.olxcloneanroidapp.core.Nodes
+import com.creativeitinstitute.olxcloneanroidapp.core.DataState
 import com.creativeitinstitute.olxcloneanroidapp.data.models.Profile
 import com.creativeitinstitute.olxcloneanroidapp.databinding.FragmentHomeBinding
-import com.creativeitinstitute.olxcloneanroidapp.views.dashboard.profile.ProfileFragment
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
-import com.google.firebase.storage.FirebaseStorage
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 
-    lateinit var user: Profile
-
+    private var profile: Profile? = null
+    private val viewModel: HomeViewModel by viewModels ()
+    private var hashLocalImageUrl :Boolean = false
     override fun setListener() {
-
-//        val storageReference = FirebaseStorage.getInstance().reference
-//        val imageRef = user.userImage?.let { storageReference.child(it) }
-//
-//        imageRef?.downloadUrl?.addOnSuccessListener { uri ->
-//
-//            Glide.with(this)
-//                .load(uri)
-//                .into(binding.ivProfilePic)
-//
-//
-//        }?.addOnFailureListener {
-//            Toast.makeText(context, "Failed to load image", Toast.LENGTH_SHORT).show()
-//        }
-
+        FirebaseAuth.getInstance().currentUser?.let {
+            viewModel.getUserByUserID(it.uid)
+        }
 
         with(binding){
             ivProfilePic.setOnClickListener {
@@ -47,13 +29,32 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         }
 
 
-
-
-
     }
 
     override fun allObserver() {
 
+        viewModel.logedInUserResponse.observe(viewLifecycleOwner){
+            when(it){
+                is DataState.Error -> {
+                    loading.dismiss()
+                }
+                is DataState.Loading -> {
+                    loading.show()
+                }
+                is DataState.Success -> {
+                    profile = it.data
+                    setProfileData(profile)
+                    loading.dismiss()
+                }
+            }
+        }
+    }
+    private fun setProfileData(profile: Profile?) {
+        hashLocalImageUrl = profile?.userImage.isNullOrBlank()
+
+        binding.apply {
+            ivProfilePic.load(profile?.userImage)
+        }
 
     }
 }

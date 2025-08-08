@@ -11,4 +11,5 @@
     <color name="subTitleTextColor">#D7D7D7</color>
     <color name="green">#2DAC48</color>
     <color name="backgroundColor">#E5E6FF</color>
+    <color name="my_status_bar_color">#673AB7</color>
 </resources>

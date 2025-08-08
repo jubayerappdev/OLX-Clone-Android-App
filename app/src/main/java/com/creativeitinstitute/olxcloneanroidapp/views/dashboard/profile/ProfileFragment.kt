@@ -1,29 +1,18 @@
 package com.creativeitinstitute.olxcloneanroidapp.views.dashboard.profile
 
-import android.Manifest
-import android.app.Activity
 import android.content.Intent
-import android.os.Build
-import android.util.Log
-import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.creativeitinstitute.olxcloneanroidapp.R
 import com.creativeitinstitute.olxcloneanroidapp.base.BaseFragment
 import com.creativeitinstitute.olxcloneanroidapp.core.DataState
-import com.creativeitinstitute.olxcloneanroidapp.core.areAllPermissionsGranted
 import com.creativeitinstitute.olxcloneanroidapp.data.models.Profile
 import com.creativeitinstitute.olxcloneanroidapp.databinding.FragmentProfileBinding
 import com.creativeitinstitute.olxcloneanroidapp.views.starter.MainActivity
-import com.github.dhaval2404.imagepicker.ImagePicker
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
-import kotlin.getValue
 
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
