@@ -152,22 +152,12 @@ class EditProfileFragment : BaseFragment<FragmentEditProfileBinding>(FragmentEdi
 
             if (areAllPermissionsGranted(permissionList)){
 
-
-
-                //ase
-                Toast.makeText(requireContext(), "Ase", Toast.LENGTH_LONG).show()
-
                 ImagePicker.with(this)
                     .compress(1024)         //Final image size will be less than 1 MB(Optional)
                     .maxResultSize(512, 512)  //Final image resolution will be less than 1080 x 1080(Optional)
                     .createIntent { intent ->
                         startForProfileImageResult.launch(intent)
                     }
-
-
-            }else{
-                //nai
-                Toast.makeText(requireContext(), "nai", Toast.LENGTH_LONG).show()
 
 
             }

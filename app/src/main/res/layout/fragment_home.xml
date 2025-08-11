@@ -38,7 +38,7 @@
             android:layout_marginEnd="@dimen/_24sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_headTitle"
-            android:src="@drawable/backrgound"
+            android:src="@drawable/ic_profile"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/CircleImageView"/>
 

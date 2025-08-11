@@ -38,6 +38,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
             tvNavEditProfile.setOnClickListener {
                 findNavController().navigate(R.id.action_myProfileFragment_to_editProfileFragment)
             }
+            btnBack.setOnClickListener {
+               findNavController().navigate(R.id.action_myProfileFragment_to_myHomeFragment)
+
+            }
         }
 
     }

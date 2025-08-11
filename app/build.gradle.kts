@@ -81,4 +81,7 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.imagepicker)
     implementation(libs.activity.ktx)
+
+    //powerSpinner
+    implementation(libs.powerspinner)
 }

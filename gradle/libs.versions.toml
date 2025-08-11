@@ -31,6 +31,9 @@ circleimageview="3.1.0"
 imagepicker = "2.1"
 activity-ktx = "1.10.1"
 
+
+powerspinner = "1.2.7"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -62,6 +65,8 @@ glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "gl
 
 imagepicker= { group = "com.github.dhaval2404", name = "imagepicker", version.ref = "imagepicker" }
 activity-ktx= { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
+
+powerspinner = { group = "com.github.skydoves", name = "powerspinner", version.ref = "powerspinner" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

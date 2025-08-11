@@ -11,17 +11,41 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/white">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="My Profile"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_24ssp"
-            android:textStyle="bold" />
+            android:layout_marginTop="8dp">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/ic_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="My Profile"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_24ssp"
+                android:textStyle="bold"
+                app:layout_constraintHorizontal_bias="0.2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -137,7 +161,7 @@
             android:layout_marginVertical="@dimen/layout_marginVertical_8"
             android:layout_marginHorizontal="@dimen/layout_marginHorizontal_24"
             android:layout_marginTop="12dp"
-            android:backgroundTint="@color/secondaryColor"
+            android:backgroundTint="@color/button_color"
             android:fontFamily="@font/poppins_medium"
             android:text="Logout"
             android:textColor="@color/white"
