@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
+import com.bumptech.glide.Glide
 import com.creativeitinstitute.olxcloneanroidapp.R
 import com.creativeitinstitute.olxcloneanroidapp.base.BaseFragment
 import com.creativeitinstitute.olxcloneanroidapp.core.DataState
@@ -74,8 +75,12 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         binding.apply {
             tvUserName.setText(profile?.name)
             tvLocation.setText(profile?.location)
-            ivProfilePic.load(profile?.userImage)
         }
+        Glide.with(this)
+            .load(profile?.userImage) // your Firebase image URL
+            .placeholder(R.drawable.ic_profile) // shown while loading
+            .error(R.drawable.ic_user)       // shown if URL is null or fails
+            .into(binding.ivProfilePic)
 
     }
 

@@ -9,7 +9,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.creativeitinstitute.olxcloneanroidapp.R
 import com.creativeitinstitute.olxcloneanroidapp.databinding.ActivityUserDashboardBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -17,15 +16,16 @@ class UserDashboard : AppCompatActivity() {
 
     private lateinit var binding: ActivityUserDashboardBinding
     lateinit var navController: NavController
-    lateinit var appBarConfiguration: AppBarConfiguration
 
+    private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding= ActivityUserDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        navController= findNavController(R.id.fragmentContainerView1)
+
+        navController= findNavController(R.id.fragmentContainerView)
 
        appBarConfiguration = AppBarConfiguration(setOf(
             R.id.myHomeFragment,
@@ -37,9 +37,9 @@ class UserDashboard : AppCompatActivity() {
 //        setupActionBarWithNavController(navController, appBarConfiguration)
 
     }
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
+//    override fun onSupportNavigateUp(): Boolean {
+//        return navController.navigateUp() || super.onSupportNavigateUp()
+//    }
 
 
 }
